@@ -22,17 +22,17 @@ foreach ($searchBaseItem in $searchBases) {
         ""
     )
     #>
-
+    ################  Specific Terminals  ################
 
     ################  Specific Locations  ################
     <# $filterString = "Name -like 'AA##*' -or Name -like 'AA##*'"
 
-    $computers += (Get-ADComputer -Filter $filterString -SearchBase $searchBaseItem). name | Sort-Object
-    $computers += (Get-ADComputer -Filter $filterString -SearchBase $searchBaseItem).name    | Sort-Object #>
-
+    $computers += (Get-ADComputer -Filter $filterString -SearchBase $searchBaseItem).name | Sort-Object #>
+    ################  Specific Locations  ################
 
     ################  Everyone  ################
-    $computers += (Get-ADComputer -Filter "*" -SearchBase $searchBaseItem).name
+    <# $computers += (Get-ADComputer -Filter "*" -SearchBase $searchBaseItem).name #>
+    ################  Everyone  ################
 }
 
 # Now we sort for easier follow up later on
